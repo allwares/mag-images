@@ -1,0 +1,17 @@
+FROM composer:latest AS magento-2.3-composer
+WORKDIR /magento
+COPY *.json ./
+
+RUN composer install --ignore-platform-reqs
+
+FROM alpine AS magento-2.3-files
+
+RUN apk update
+RUN apk add zip
+
+COPY --from=magento-2.3-composer /magento /magento
+RUN zip -r /magento.zip /magento
+
+FROM alpine AS magento-2.3-zip
+COPY --from=magento-2.3-files /magento.zip /
+
