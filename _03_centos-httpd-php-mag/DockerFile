@@ -2,7 +2,7 @@ FROM allwares/centos-httpd-php:latest
 WORKDIR /var/www/html/
 
 COPY --from=allwares/mag-base-zip:latest /magento.zip ./
-COPY httpd.conf /etc/https/conf/
+COPY httpd.conf /etc/httpd/conf/
 COPY php.ini /etc/
 
 RUN unzip ./magento.zip -d ./ \
