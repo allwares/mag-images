@@ -1,7 +1,7 @@
-FROM allwares/centos-httpd-php:latest 
+FROM allwares/centos-httpd-php:2.2 
 WORKDIR /var/www/html/
 
-COPY --from=allwares/mag-base-zip:latest /magento.zip ./
+COPY --from=allwares/mag-base-zip:2.2 /magento.zip ./
 COPY httpd.conf /etc/httpd/conf/
 COPY php.ini /etc/
 
