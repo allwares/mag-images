@@ -1,0 +1,1 @@
+# MagentoFactory-images
