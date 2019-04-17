@@ -1,0 +1,7 @@
+FROM allwares/centos-httpd-php:2.3 
+
+RUN yum install -y vim nano
+RUN yum install -y gcc-c++ make
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+RUN yum install -y nodejs
+RUN npm install -g grunt
