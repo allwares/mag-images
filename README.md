@@ -1,1 +1,2 @@
 # MagentoFactory-images
+test
