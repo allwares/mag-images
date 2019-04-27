@@ -1,7 +1,7 @@
-FROM allwares/centos-httpd-php:2.3 
+FROM allwares/centos-httpd-php:2.3.1 
 WORKDIR /var/www/html/
 
-COPY --from=allwares/mag-base-zip:2.3 /magento.zip ./
+COPY --from=allwares/mag-base-zip:2.3.1 /magento.zip ./
 COPY httpd.conf /etc/httpd/conf/
 COPY php.ini /etc/
 
@@ -12,6 +12,4 @@ RUN unzip ./magento.zip -d ./ \
 RUN chown -R apache:apache /var/www/html/var/ \
 		&& chmod -R 775 /var/www/html/var/ \
 		&& chown -R apache:apache /var/www/html/pub/ \
-		&& chmod -R 775 /var/www/html/pub/ 
-		
-
+		&& chmod -R 775 /var/www/html/pub/
