@@ -1,4 +1,4 @@
-FROM allwares/centos-httpd-php:2.3 
+FROM allwares/centos-httpd-php:2.3.1 
 
 RUN yum install -y vim nano
 RUN yum install -y gcc-c++ make
